@@ -1,30 +1,44 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
   <link type="text/css" rel="stylesheet" href="/static/main.css" />
-
-  <title>CS 253 Blog</title>
+  <title>Blog</title>
 </head>
 
 <body>
-  <a href="/blog" class="main-title">
-    CS 253 Blog
-  </a>
+    <nav class="navbar navbar-inverse bg-inverse">
+        <div class="container">
+        {% if user %}
+          <a href="/blog" class="navbar-brand">
+            Welcome, {{user.name}}
+          </a>
+        {% else %}
+          <a href="/blog" class="navbar-brand">
+            Multi-User Blog
+          </a>
+        {% endif %}
 
-  <div class="login-area">
-    {% if user %}
-      {{user.name}} (<a class="login-link" href="/logout">logout</a>)
-    {% else %}
-      <a class="login-link" href="/login">login</a>
-      |
-      <a class="login-link" href="/signup">signup</a>
-    {% endif %}
-  </div>
+          <div class="navigation-right">
+            {% if user %}
+              <a class="login-link" href="/blog/newpost">New Story</a>
+              <a class="login-link" href="/logout">Logout</a>
+            {% else %}
+              <a class="login-link" href="/login">LogIn</a>
+              <a class="login-link" href="/signup">SignUp</a>
+            {% endif %}
+          </div>
+        </div>
+    </nav>
 
-  <div id="content">
-  {% block content %}
-  {% endblock %}
-  </div>
+    <div class="content">
+        <div class="container">
+            <div id="content">
+                {% block content %}
+                {% endblock %}
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>

@@ -1,4 +1,4 @@
-body {
+/*body {
     position: relative;
     font-family: Helvetica, Arial, sans-serif;
     font-size: 14px;
@@ -103,3 +103,42 @@ input[type=submit] {
     margin-top: 5px;
 }
 
+a.btn {
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: button;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0px;
+    text-decoration: none;
+    color: initial;
+    background: white;
+}
+
+*/
+
+.navigation-right {
+    float: right;
+    padding-top: 4px;
+}
+
+.content{
+    padding-top: 70px;
+    padding-bottom: 70px;
+}
+
+.login-link{
+    margin-right: 10px;
+}
+
+.newpost{
+    text-align: center;
+}
+
+.post_title{
+    display: inherit;
+}
+
+.post_content{
+
+}
